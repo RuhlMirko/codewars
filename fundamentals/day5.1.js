@@ -1,5 +1,6 @@
 function countPositivesSumNegatives(input) {
-  let posCounter = 0;
+  /*
+    let posCounter = 0;
   let negCounter = 0;
 
   if (input == null || input.length == 0) {
@@ -14,8 +15,14 @@ function countPositivesSumNegatives(input) {
       negCounter += i;
     }
   }
-
   return [posCounter, negCounter];
+  */
+  return input && input.length
+    ? [
+        input.filter((p) => p > 0).length,
+        input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
+      ]
+    : [];
 }
 
 console.log(
