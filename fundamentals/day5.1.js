@@ -1,17 +1,11 @@
 function countPositivesSumNegatives(input) {
-  let posCounter = 0;
-  let negCounter = 0;
-
-  for (let i in input) {
-    if (input[i] !== 0) {
-      if (input[i] > 0) {
-        posCounter++;
-      } else {
-        negCounter += input[i];
-      }
-    }
-  }
-  return [posCounter, negCounter];
+  return input.reduce(
+    ([posCount, negSum], num) => [
+      num > 0 ? posCount + 1 : posCount,
+      num < 0 ? negSum + num : negSum,
+    ],
+    [0, 0]
+  );
 }
 
 console.log(
