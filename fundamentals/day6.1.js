@@ -9,6 +9,9 @@ function disemvowel(str) {
   }
 
   return newStr.join("");
+  /*  One Liner:
+  return str.replace(/[aeiou]/gi, '')
+  */
 }
 
 /*
