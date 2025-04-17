@@ -1,9 +1,10 @@
 var number = function (busStops) {
-  for (let first in busStops) {
-    for (let second in first) {
-      console.log(second);
-    }
+  let counter = 0;
+  for (let first of busStops) {
+    counter += first[0];
+    counter -= first[1];
   }
+  return counter;
 };
 
 console.log(
