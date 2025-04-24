@@ -8,7 +8,6 @@ function findMissingLetter(array) {
       return String.fromCharCode(codes[i] + 1);
     }
   }
-  return " ";
 }
 
 console.log(findMissingLetter(["a", "b", "c", "d", "e", "f"])); // e
