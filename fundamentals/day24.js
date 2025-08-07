@@ -1,4 +1,4 @@
-const binaryArrayToNumber = (arr) => {
+const oldBinaryArrayToNumber = (arr) => {
   let counter = 0;
   for (let i in arr) {
     switch (i) {
@@ -17,6 +17,17 @@ const binaryArrayToNumber = (arr) => {
     }
   }
   return counter;
+};
+
+// You can convert a binary array to a number without using parseInt by iterating through the array
+// and shifting/adding bits manually.
+
+const binaryArrayToNumber = (arr) => {
+  let num = 0;
+  for (let bit of arr) {
+    num = (num << 1) | bit;
+  }
+  return num;
 };
 
 console.log(binaryArrayToNumber([0, 0, 0, 1])); // 1
