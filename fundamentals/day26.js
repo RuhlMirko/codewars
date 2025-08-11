@@ -1,3 +1,4 @@
+// return [...iterable].filter((a, i) => a !== iterable[i-1])
 var uniqueInOrder = function (iterable) {
   const uniqueItems = [];
   if (typeof iterable == "string") iterable = iterable.split("");
