@@ -1,5 +1,5 @@
 function checkForFactor(base, factor) {
-  return base % factor == 0 ? true : false;
+  return base % factor == 0;
 }
 
 console.log(checkForFactor(10, 2));
