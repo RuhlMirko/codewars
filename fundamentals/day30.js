@@ -12,6 +12,17 @@ console.log(expandedForm(12)); // 10 + 2
 console.log(expandedForm(45)); // 40 + 5
 console.log(expandedForm(70304)); // 70000 + 300 + 4
 
+// Better version
+const improvedExpandedForm = (n) =>
+  n
+    .toString()
+    .split("")
+    .reverse()
+    .map((a, i) => a * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(" + ");
+
 // Write Number in Expanded Form
 // You will be given a number and you will need to return it as a string in Expanded Form. For example:
 //https://www.mathsisfun.com/definitions/expanded-notation.html
