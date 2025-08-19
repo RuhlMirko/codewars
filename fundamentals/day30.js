@@ -1,12 +1,11 @@
 function expandedForm(num) {
-  let str = "";
-  for (let i = 10000; i >= 1; i /= 10) {
-    if (!num % i) continue;
-    if (num % i) {
-      str += num % i;
-    }
+  const validNums = [];
+  const numArr = String(num).split("");
+  for (let i = numArr.length - 1, j = 1; i >= 0; i--, j = j * 10) {
+    const sum = numArr[i] * j;
+    if (sum) validNums.push(sum);
   }
-  return str;
+  return validNums.reverse().join(" + ");
 }
 
 console.log(expandedForm(12)); // 10 + 2
