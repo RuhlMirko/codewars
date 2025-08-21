@@ -20,7 +20,11 @@ function improvedIncrementString(input) {
   });
 }
 
+let shortIncrementString = (str) =>
+  str.replace(/([0-8]|\d?9+)?$/, (e) => (e ? String(+e + 1) : "1"));
+
 console.log(incrementString("foo")); // foo1
 console.log(incrementString("foo23")); // foo1
 console.log(incrementString("foo0042")); // foo1
 console.log(incrementString("fooll0042")); // foo1
+console.log(shortIncrementString("fooll0042")); // foo1
