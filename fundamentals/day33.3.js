@@ -1,8 +1,14 @@
 function sortArray(array) {
-  const resultArr = array.map((x) =>
-    x % 2 ? [...array.filter((n) => n % 2).sort((a, b) => a - b)].shift() : x
-  );
-
+  let resultArr = [];
+  const odds = array.filter((x) => x % 2 !== 0).sort((a, b) => a - b);
+  let nextI = 0;
+  for (let i in array) {
+    if (array[i] % 2 == 0) resultArr.push(array[i]);
+    else {
+      resultArr.push(odds[nextI]);
+      nextI++;
+    }
+  }
   return resultArr;
 }
 
