@@ -20,6 +20,9 @@ function printerError(s) {
   return `${matches.length}/${s.length}`;
 }
 
+//One-liner
+const newPrinterError = (s) => `${s.replace(/[a-m]/gi, "").length}/${s.length}`;
+
 console.log(
   printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
 ); // 3/56
