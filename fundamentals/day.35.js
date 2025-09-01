@@ -1,9 +1,8 @@
 function likes(names) {
-  const arrLength = names.length;
-  const isPlural = names.length > 2 ? "like" : "likes";
-  if (!arrLength) return "no one likes this";
-  if (arrLength <= 3) return names.join(" and ") + isPlural + " this";
-  return `${names[0]}, ${names[1]} and ${arrLength - 2} others like this`;
+  let result = "";
+  const isPlural = names.length > 1 ? "like" : "likes";
+  if (!names.length) return `no one ${isPlural} this`;
+  return result;
 }
 
 console.log(likes([])); //"no one likes this"
