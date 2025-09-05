@@ -1,10 +1,13 @@
-function openOrSenior(data) {
+function oldOpenOrSenior(data) {
   const resultArr = [];
   for (let i of data) {
     resultArr.push(i[0] >= 55 && i[1] > 7 ? "Senior" : "Open");
   }
   return resultArr;
 }
+
+const openOrSenior = (data) =>
+  data.map((person) => (person[0] >= 55 && person[1] > 7 ? "Senior" : "Open"));
 
 console.log(
   openOrSenior([
