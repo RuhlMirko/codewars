@@ -8,5 +8,10 @@ function solution(string) {
   return newStr;
 }
 
+const regexSolution = (string) => string.replace(/([A-Z])/g, " $1");
+
+//return(string.replace(/([A-Z])/g, ' $1'));
 console.log(solution("camelCasing"));
 console.log(solution("camelCasingTest"));
+console.log(regexSolution("camelCasing"));
+console.log(regexSolution("camelCasingTest"));
