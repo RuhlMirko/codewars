@@ -18,6 +18,18 @@ var maxSequence = function (arr) {
   return maxSum;
 };
 
+// More concise version
+var shortMaxSequence = function (arr) {
+  if (!arr.length || !arr.some((e) => e > 0)) return 0;
+  let sum = 0,
+    maxSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = Math.max(arr[i], sum + arr[i]);
+    maxSum = Math.max(maxSum, sum);
+  }
+  return maxSum;
+};
+
 console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6 as stated above
 console.log(maxSequence([])); // 0
 console.log(maxSequence([-2, -3, -3, -4, -6, -5])); // 0
