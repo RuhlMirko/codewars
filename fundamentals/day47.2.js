@@ -9,10 +9,13 @@ var maxSequence = function (arr) {
   if (!arr.length || !hasPositive.length) return 0;
   // truthy values
   let sum = arr[0];
+  let maxSum = arr[0];
   for (let i = 1; i < arr.length; i++) {
     sum += arr[i];
-    console.log(sum);
+    if (sum < arr[i]) sum = arr[i];
+    if (sum > maxSum) maxSum = sum;
   }
+  return maxSum;
 };
 
 console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6 as stated above
