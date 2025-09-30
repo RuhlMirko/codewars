@@ -6,6 +6,10 @@ const reverseSeq = (n) => {
   return arr;
 };
 
+const anotherReverseSeq = (n) =>
+  Array(n)
+    .fill(0)
+    .map((_, i) => n - i);
+
 console.log(reverseSeq(5));
-console.log(reverseSeq(10));
-console.log(reverseSeq(7));
+console.log(anotherReverseSeq(7));
