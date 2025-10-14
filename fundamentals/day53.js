@@ -1,10 +1,5 @@
 function arrayDiff(a, b) {
-  const diffArr = [];
-  for (let i of a) {
-    // console.log(b.map((item) => i == item));
-  }
-
-  return diffArr;
+  return a.filter((item) => !b.includes(item));
 }
 
 console.log(arrayDiff([1, 2], [1])); // [2]
