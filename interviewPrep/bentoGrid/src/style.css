@@ -25,6 +25,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body::before {
+  content: "";
+  background-image: url("../public/NierAutomataBg.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: -1;
+  filter: grayscale(100%);
+}
 
 a {
   font-weight: 500;
@@ -64,12 +77,13 @@ body {
     "box-1 box-4 box-5 box-5";
 }
 
-hr {
+/* hr {
   display: hidden;
   border-bottom: 2px solid var(--fg-secondary);
-}
+} */
 
 h1 {
+  margin-top: 1em;
   font-size: 4.2em;
   font-family: "Montserrat";
 }
@@ -105,6 +119,7 @@ nav ul {
   list-style: none;
   width: 100%;
   margin-bottom: 0.5em;
+  border-left: 8px double var(--font-primary);
 }
 
 nav a {
@@ -123,6 +138,7 @@ nav a:hover {
 }
 
 nav {
+  margin-top: 3em;
   display: flex;
   justify-content: center;
   width: 100%;
