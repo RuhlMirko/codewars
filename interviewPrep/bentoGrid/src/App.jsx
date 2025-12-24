@@ -6,8 +6,17 @@ export default function App(){
     <>
 
       <h1>Mirko Ruhl</h1>
-      <h2>Full Stack Developer</h2>
-      <hr />
+      <h3>Full Stack Developer</h3>
+      
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About Me</a></li>
+          <li><a href="">Projects</a></li>
+          <li><a href="">Skills</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
 
       <div className='grid-container'>
         <div className='box' style={{ gridArea: 'box-1' }}>
