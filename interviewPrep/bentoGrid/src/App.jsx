@@ -38,6 +38,20 @@ export default function App(){
         
       </section>
 
+      <section className='projects'>
+        <h2>My Projects - <span>Projectos mios</span></h2>
+        <div className='project-container'>
+          <h3>Tenzies game</h3>
+          <div>
+            <p>An interactive dice game where players roll until all dice show the same number. Features a timer and high score tracking with localStorage.
+              <br /><br />
+              In this project I learned how to use React useState hook and persistent data storage.
+              <br /><br />
+              The hardest part was implementing a real-time timer and integrating localStorage for tracking high scores.  </p>
+          </div>
+        </div>
+      </section>
+
       <div className='grid-container'>
         <div className='box' style={{ gridArea: 'box-1' }}>
         </div>
