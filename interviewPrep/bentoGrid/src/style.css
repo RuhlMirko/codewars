@@ -104,13 +104,13 @@ h2 {
   margin-bottom: 0.5em;
   width: fit-content;
   border: 2px double transparent;
-  padding: 5px;
+  padding: 8px 0;
   position: relative; 
   overflow: hidden;
   z-index: 0;
 }
 h2:hover::before {
-  transform: translateX(0);
+  transform: translateX(-10%);
 }
 
 h2::before {
@@ -124,7 +124,7 @@ h2::before {
   /* Starts the border completely outside the view (from the left) */
   transform: translateX(-100%); 
   /* Smooth transition for the transform property */
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.2s ease-out; 
 }
 h2::after {
   content: '';
@@ -135,12 +135,12 @@ h2::after {
   height: 2px; /* Thickness of the sliding border */
   background-color: #1a1a1a85; /* Color of the sliding border */
   /* Starts the border completely outside the view (from the left) */
-  transform: translateX(-100%); 
+  transform: translateX(100%); 
   /* Smooth transition for the transform property */
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.2s ease-out; 
 }
 h2:hover::after{
-transform: translateX(0);
+transform: translateX(20%);
 }
 
 
