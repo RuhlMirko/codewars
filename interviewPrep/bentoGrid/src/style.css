@@ -119,8 +119,6 @@ h2 span{
   margin-left: 0;
   margin-top: 0.5em;
 }
-.projects div{
-}
 .projects p{
   max-width: 60ch;
 }
@@ -128,6 +126,8 @@ h2 span{
   border: 1px solid var(--bg-primary);
   padding: 0.2em 1em 2em;
 }
+
+
 h3 {
   background-color: var(--bg-primary);
   color: var(--fg-primary);
@@ -162,8 +162,8 @@ nav a {
 nav a:hover {
   background-color: var(--fg-primary);
   color: #1a1a1a;
-  box-shadow: 5px 5px 5px #1a1a1a23;
-  padding-bottom: 0.5em;
+  box-shadow: 5px 0 5px #1a1a1a23;
+  padding-bottom: 0.8em;
 }
 
 nav {
@@ -173,6 +173,12 @@ nav {
   width: 100%;
   align-items: center;
   border-bottom: 2px solid var(--fg-secondary);
+  position: sticky;
+  top: 0;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
+  backdrop-filter: blur(25px);
+  background-color: rgba(227, 220, 188, 0.742);
 }
 
 button{
@@ -183,7 +189,9 @@ button{
   min-width: 40px;
   padding: 0.5em 1em;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-family: inherit;
+  font-size: 1.2em;
   border: none;
   box-shadow: 4px 5px 0 #1a1a1a23;
   transition: 0.2s;
@@ -191,9 +199,10 @@ button{
 }
 
 button:hover{
-  background-color: var(--fg-secondary);
+  background-color: var(--fg-primary);
   color: #1a1a1a;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .shortcut{
