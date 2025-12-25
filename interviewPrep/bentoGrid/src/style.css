@@ -25,7 +25,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body::before {
+body::after {
   content: "";
   background-image: url("../public/NierAutomataBg.png");
   background-size: cover;
@@ -146,6 +146,26 @@ nav {
   border-bottom: 2px solid var(--fg-secondary);
 }
 
+button{
+  background-color: var(--bg-secondary);
+  color: var(--font-primary);
+  padding: 0.2em;
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  min-height: 40px;
+  min-width: 40px;
+
+}
+
+.shortcut{
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  justify-content: center;
+  gap: 1em;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -174,24 +194,7 @@ nav {
   color: #888;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {

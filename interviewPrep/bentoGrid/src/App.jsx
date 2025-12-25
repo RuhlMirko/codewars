@@ -8,6 +8,12 @@ export default function App(){
       <h1>Mirko Ruhl</h1>
       <h3>Full Stack Developer</h3>
       
+      <ul className='shortcut'>
+        <li><button>Github</button></li>
+        <li><button>LinkedIn</button></li>
+        <li><button>Email</button></li>
+      </ul>
+
       <nav>
         <ul>
           <li><a href="">Home</a></li>
