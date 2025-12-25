@@ -28,7 +28,8 @@
 body::after {
   content: "";
   background-image: url("../public/NierAutomataBg.png");
-  background-size: cover;
+  background-size: 100% 100%;
+  height: 300vh;
   position: absolute;
   top: 0;
   right: 0;
@@ -36,7 +37,7 @@ body::after {
   left: 0;
   opacity: 0.2;
   z-index: -1;
-  filter: grayscale(100%);
+  filter: grayscale(50%);
 }
 
 a {
@@ -98,6 +99,7 @@ h2 {
 h2 {
   text-shadow: 5px 6px 0 #1a1a1a23;
   font-weight: 300;
+  font-weight: 500;
 }
 
 h3 {
@@ -135,6 +137,7 @@ nav a:hover {
   background-color: var(--fg-primary);
   color: #1a1a1a;
   box-shadow: 5px 5px 5px #1a1a1a23;
+  padding-bottom: 0.5em;
 }
 
 nav {
@@ -147,15 +150,24 @@ nav {
 }
 
 button{
-  background-color: var(--bg-secondary);
-  color: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
   padding: 0.2em;
-  width: 10%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
   min-height: 40px;
   min-width: 40px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 4px 5px 0 #1a1a1a23;
+  transition: 0.2s;
+  border: 1px solid transparent;
+}
 
+button:hover{
+  background-color: var(--fg-secondary);
+  color: #1a1a1a;
+  border: 1px solid black;
 }
 
 .shortcut{
@@ -164,6 +176,16 @@ button{
   list-style-type: none;
   justify-content: center;
   gap: 1em;
+}
+
+.cta{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin: 3em 0;
+}
+.cta button{
+  margin-right: 1em;
 }
 
 #app {
