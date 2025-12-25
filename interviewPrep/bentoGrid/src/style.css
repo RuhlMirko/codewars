@@ -102,7 +102,47 @@ h2 {
   font-weight: 500;
   text-align: left;
   margin-bottom: 0.5em;
+  width: fit-content;
+  border: 2px double transparent;
+  padding: 5px;
+  position: relative; 
+  overflow: hidden;
+  z-index: 0;
 }
+h2:hover::before {
+  transform: translateX(0);
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the sliding border */
+  background-color: #1a1a1a85; /* Color of the sliding border */
+  /* Starts the border completely outside the view (from the left) */
+  transform: translateX(-100%); 
+  /* Smooth transition for the transform property */
+  transition: transform 0.3s ease-out; 
+}
+h2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the sliding border */
+  background-color: #1a1a1a85; /* Color of the sliding border */
+  /* Starts the border completely outside the view (from the left) */
+  transform: translateX(-100%); 
+  /* Smooth transition for the transform property */
+  transition: transform 0.3s ease-out; 
+}
+h2:hover::after{
+transform: translateX(0);
+}
+
 
 h2 span{
   font-size: 0.7em;
@@ -116,15 +156,19 @@ h2 span{
 }
 
 .projects h3{
-  margin-left: 0;
   margin-top: 0.5em;
 }
 .projects p{
   max-width: 60ch;
 }
-.project-container{  
-  border: 1px solid var(--bg-primary);
+.project-card{  
   padding: 0.2em 1em 2em;
+  background-color: var(--fg-primary);
+  margin: 1em;
+  box-shadow: 0.4em 0.4em 0.5em #1a1a1a86;
+}
+.projects-container{
+  display: flex;
 }
 
 
@@ -179,6 +223,8 @@ nav {
   padding-bottom: 0.2em;
   backdrop-filter: blur(25px);
   background-color: rgba(227, 220, 188, 0.742);
+  z-index: 4;
+  letter-spacing: 2px;
 }
 
 button{
