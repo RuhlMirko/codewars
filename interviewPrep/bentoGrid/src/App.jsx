@@ -39,7 +39,7 @@ export default function App(){
       </section>
 
       <section className='projects'>
-        <h2>My Projects - <span>Projectos mios</span></h2>
+        <h2>My Projects</h2>
         <div className='projects-container'>
           <div className='project-card'>
             <h3>Tenzies game</h3>
@@ -65,18 +65,41 @@ export default function App(){
         
       </section>
 
-      <div className='grid-container'>
-        <div className='box' style={{ gridArea: 'box-1' }}>
-        </div>
-        <div className='box' style={{ gridArea: 'box-2' }}>
-        </div>
-        <div className='box' style={{ gridArea: 'box-3' }}>
-        </div>
-        <div className='box' style={{ gridArea: 'box-4' }}>
-        </div>
-        <div className='box' style={{ gridArea: 'box-5' }}>
+      <section className='skills' >
+        <h2>My Skills</h2>
+        <div className='grid-container'>
+          <div className='box' style={{ gridArea: 'box-1' }}>
+            <h3>Frontend</h3>
+            <ul>
+              <li className='pill'>JavaScript</li>
+              <li className='pill'>Html5</li>
+              <li className='pill'>CSS</li>
+            </ul>
+          </div>
+          <div className='box' style={{ gridArea: 'box-2' }}>
+            <h3>Backend</h3>
+            <ul>
+              <li className='pill'>JavaScript</li>
+              <li className='pill'>JavaScript</li>
+              <li className='pill'>JavaScript</li>
+            </ul>
+          </div>
+          <div className='box' style={{ gridArea: 'box-3' }}>
+            <h3>Mobile</h3>
+            <ul>
+              <li className='pill'>JavaScript</li>
+              <li className='pill'>JavaScript</li>
+              <li className='pill'>JavaScript</li>
+            </ul>
+          </div>
+          <div className='box' style={{ gridArea: 'box-4' }}>
+          </div>
+          <div className='box' style={{ gridArea: 'box-5' }}>
         </div>
       </div>
+      </section>
+
+      
     </>
   )
 }

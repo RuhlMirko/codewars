@@ -63,19 +63,45 @@ body {
   min-height: 100vh;
   padding: 2%;
 }
+
+section {
+  padding-bottom: 2em;
+  border-bottom: 2px solid var(--fg-secondary);
+}
+
 .box {
   background-color: var(--fg-primary);
   box-shadow: 0.4em 0.4em 0.5em #1a1a1a86;
 }
 .grid-container {
-  margin-top: 1em;
   display: grid;
-  grid-template-columns: 15vw 15vw 15vw 15vw;
-  grid-template-rows: 15vw 15vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 25vh 20vh;
   gap: 1em;
   grid-template-areas:
-    "box-1 box-2 box-2 box-3"
-    "box-1 box-4 box-5 box-5";
+    "box-1 box-1 box-2 box-2"
+    "box-3 box-3 box-4 box-5";
+  margin: 0 auto 1em;
+  width: 100%;
+}
+.grid-container h3 {
+  margin-top: 0.5em;
+}
+.box ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+.pill {
+  /* border: 2px solid #1a1a1a23; */
+  border-left: 4px double #1a1a1a;
+  background-color: var(--fg-secondary);
+  padding: 0.2em 1em;
+  min-width: 100px;
+  letter-spacing: 2px;
 }
 
 /* hr {
@@ -98,36 +124,34 @@ h2 {
 
 h2 {
   text-shadow: 5px 6px 2px #1a1a1a23;
-  font-weight: 300;
   font-weight: 500;
   text-align: left;
+  letter-spacing: 3px;
   margin-bottom: 0.5em;
-  width: fit-content;
+  /* width: fit-content; */
   border: 2px double transparent;
   padding: 8px 0;
-  position: relative; 
+  position: relative;
   overflow: hidden;
   z-index: 0;
 }
 h2:hover::before {
-  transform: translateX(-10%);
+  transform: translateX(0);
 }
 
 h2::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px; /* Thickness of the sliding border */
-  background-color: #1a1a1a85; /* Color of the sliding border */
-  /* Starts the border completely outside the view (from the left) */
-  transform: translateX(-100%); 
-  /* Smooth transition for the transform property */
-  transition: transform 0.2s ease-out; 
+  height: 2px;
+  background-color: #1a1a1a85;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-out;
 }
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -135,42 +159,41 @@ h2::after {
   height: 2px; /* Thickness of the sliding border */
   background-color: #1a1a1a85; /* Color of the sliding border */
   /* Starts the border completely outside the view (from the left) */
-  transform: translateX(100%); 
+  transform: translateX(100%);
   /* Smooth transition for the transform property */
-  transition: transform 0.2s ease-out; 
+  transition: transform 0.2s ease-out;
 }
-h2:hover::after{
-transform: translateX(20%);
+h2:hover::after {
+  transform: translateX(0);
 }
 
-
-h2 span{
+h2 span {
   font-size: 0.7em;
   font-style: italic;
   text-transform: lowercase;
 }
 
-.projects{
+.projects {
   max-width: 1080px;
   text-align: left;
 }
 
-.projects h3{
+.projects h3 {
   margin-top: 0.5em;
 }
-.projects p{
+.projects p {
   max-width: 60ch;
+  font-weight: 600;
 }
-.project-card{  
+.project-card {
   padding: 0.2em 1em 2em;
   background-color: var(--fg-primary);
   margin: 1em;
   box-shadow: 0.4em 0.4em 0.5em #1a1a1a86;
 }
-.projects-container{
+.projects-container {
   display: flex;
 }
-
 
 h3 {
   background-color: var(--bg-primary);
@@ -227,7 +250,7 @@ nav {
   letter-spacing: 2px;
 }
 
-button{
+button {
   background-color: var(--bg-primary);
   color: var(--fg-primary);
   padding: 0.2em;
@@ -244,14 +267,14 @@ button{
   border: 1px solid transparent;
 }
 
-button:hover{
+button:hover {
   background-color: var(--fg-primary);
   color: #1a1a1a;
   border: 1px solid black;
   cursor: pointer;
 }
 
-.shortcut{
+.shortcut {
   display: flex;
   width: 100%;
   list-style-type: none;
@@ -259,16 +282,16 @@ button:hover{
   gap: 1em;
 }
 
-.cta{
+.cta {
   display: flex;
   justify-content: space-around;
   text-align: left;
-  margin: 3em 0;
+  margin: 3em 0 1em;
 }
-.cta button{
+.cta button {
   margin-right: 1em;
 }
-.cta p{
+.cta p {
   font-size: 1.2em;
   max-width: 50ch;
   margin-right: 1em;
@@ -300,8 +323,6 @@ button:hover{
 .read-the-docs {
   color: #888;
 }
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
