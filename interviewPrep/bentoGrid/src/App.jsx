@@ -1,20 +1,17 @@
-import viteLogo from '../public/vite.svg'
-import javascriptLogo from './javascript.svg'
+import React  from 'react'
+import projectsData from './data.json'
+// import 'data.json'
+
+
 
 export default function App(){
+  const [currProject, setCurrProject ] = React.useState('Tenzies Game')
+
+
   return(
     <>
-
       <h1>Mirko Ruhl</h1>
-      <h3>Full Stack Developer</h3>
-      {/*
-<ul className='shortcut'>
-        <li><button>Github</button></li>
-        <li><button>LinkedIn</button></li>
-        <li><button>Email</button></li>
-      </ul>*/
-      }
-      
+      <h3>Full Stack Developer</h3>     
 
       <nav>
         <ul>
@@ -28,7 +25,7 @@ export default function App(){
 
       <section className='cta'>
         <div>
-          <h2>Let's Work Together</h2>
+          <h2 className='hover-slide'>Let's Work Together</h2>
           <p>Have a project in mind? I'm available for freelance work and collaborations.</p>
         </div>
         <div>
@@ -39,9 +36,9 @@ export default function App(){
       </section>
 
       <section className='projects'>
-        <h2>My Projects</h2>
+        <h2 className='hover-slide'>My Projects</h2>
         <div className='projects-container'>
-          <div className='project-card'>
+          {/* <div className='project-card'>
             <h3>Tenzies game</h3>
             <div>
               <p>An interactive dice game where players roll until all dice show the same number. Features a timer and high score tracking with localStorage.
@@ -60,7 +57,20 @@ export default function App(){
                 <br /><br />
                 The hardest part was implementing a real-time timer and integrating localStorage for tracking high scores.  </p>
             </div>
+          </div> */}
+          
+          <ul className='projects-menu'>
+            <li className='hover-slide'><button>Tenzies game <span>React</span></button></li>
+            <li className='hover-slide'><button>Assembly Endgame <span>React</span></button></li>
+            <li className='hover-slide'><button>Van Life <span>React Router</span></button></li>
+            <li className='hover-slide'><button>Tenzies game</button></li>
+          </ul>
+
+          <div className='project-card'>
+            <h3>{projectsData.tenzies.title}</h3>
+            <p>{projectsData.tenzies.description}</p>
           </div>
+          
         </div>
         
       </section>

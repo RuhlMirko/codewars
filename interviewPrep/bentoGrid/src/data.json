@@ -1,0 +1,6 @@
+{
+    "tenzies":{
+        "title":"Tenzies game",
+        "description":"An interactive dice game where players roll until all dice show the same number.\n Features a timer and high score tracking with localStorage.In this project I learned how to use React useState hook and persistent data storage.\n The hardest part was implementing a real-time timer and integrating localStorage for tracking high scores."
+    }
+}
