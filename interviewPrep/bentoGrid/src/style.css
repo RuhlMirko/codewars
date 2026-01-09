@@ -41,12 +41,7 @@ body::after {
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 * {
@@ -196,6 +191,9 @@ h2 span {
 }
 .projects-container {
   display: flex;
+  align-items: center;
+  border-left: 8px double var(--font-primary);
+  padding-left: 12px;
 }
 
 h3 {
@@ -343,6 +341,13 @@ button:hover {
   box-shadow: none;
   margin: 2px 0;
   border: none;
+  text-align: left;
+}
+.projects-menu button span {
+  color: var(--fg-secondary);
+}
+.projects-menu button span::before {
+  content: "- ";
 }
 
 .projects-menu button:hover {

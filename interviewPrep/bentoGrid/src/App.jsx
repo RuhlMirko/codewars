@@ -38,26 +38,6 @@ export default function App(){
       <section className='projects'>
         <h2 className='hover-slide'>My Projects</h2>
         <div className='projects-container'>
-          {/* <div className='project-card'>
-            <h3>Tenzies game</h3>
-            <div>
-              <p>An interactive dice game where players roll until all dice show the same number. Features a timer and high score tracking with localStorage.
-                <br /><br />
-                In this project I learned how to use React useState hook and persistent data storage.
-                <br /><br />
-                The hardest part was implementing a real-time timer and integrating localStorage for tracking high scores.  </p>
-            </div>
-          </div>
-          <div className='project-card'>
-            <h3>Assembly Endgame</h3>
-            <div>
-              <p>An interactive dice game where players roll until all dice show the same number. Features a timer and high score tracking with localStorage.
-                <br /><br />
-                In this project I learned how to use React useState hook and persistent data storage.
-                <br /><br />
-                The hardest part was implementing a real-time timer and integrating localStorage for tracking high scores.  </p>
-            </div>
-          </div> */}
           
           <ul className='projects-menu'>
             <li className='hover-slide'><button>Tenzies game <span>React</span></button></li>
@@ -65,6 +45,8 @@ export default function App(){
             <li className='hover-slide'><button>Van Life <span>React Router</span></button></li>
             <li className='hover-slide'><button>Tenzies game</button></li>
           </ul>
+          
+          
 
           <div className='project-card'>
             <h3>{projectsData.tenzies.title}</h3>
