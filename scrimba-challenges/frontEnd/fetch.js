@@ -18,7 +18,9 @@ const food =
 slotMachine.innerHTML = "<h1>Loading fruits ...</h1>";
 
 function getRandomFruits(arr, count = 9) {
-  return [...arr].sort(() => Math.random() - 0.5).slice(0, count);
+  return [...arr.filter((i) => i.group.includes("fruit"))]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, count);
 }
 
 async function renderFruits() {
