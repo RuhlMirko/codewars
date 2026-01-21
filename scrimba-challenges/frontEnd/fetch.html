@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="./fetch.js"></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        background: linear-gradient(0deg, #111, #443149);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .emoji-slots-game {
+        padding-left: 0;
+        min-width: 90%;
+        min-height: 60%;
+        display: flex;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border: 6px solid rgb(255, 174, 0);
+        outline: 2px solid gold;
+        outline-offset: 5px;
+        /* box-shadow: 5px 15px 5px #ffffff48; */
+      }
+
+      .emoji-slots-game li {
+        list-style-type: none;
+        font-size: 3em;
+        display: flex;
+        flex-basis: 33.3333333%;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="emoji-slots-game">
+        <li>🍇</li>
+        <li>🥝</li>
+        <li>🍓</li>
+        <li>🍇</li>
+        <li>🥝</li>
+        <li>🍓</li>
+        <li>🍇</li>
+        <li>🥝</li>
+        <li>🍓</li>
+      </ul>
+    </div>
+  </body>
+</html>
