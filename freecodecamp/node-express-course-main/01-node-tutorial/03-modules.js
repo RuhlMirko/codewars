@@ -1,9 +1,10 @@
 // CommonJS, every file is module (by default)
 // Modules - Encapsulated Code (only share minimum)
-import { john, peter } from "./04-names";
-import sayHi from "./05-utils";
-import data from "./06-alternative-flavor";
-import "./07-mind-grenade";
+
+const names = require("./04-names.js");
+const sayHi = require("./05-utils.js");
+// import data from "./06-alternative-flavor";
+// import "./07-mind-grenade";
 sayHi("susan");
-sayHi(john);
-sayHi(peter);
+sayHi(names.john);
+sayHi(names.peter);

@@ -4,4 +4,5 @@ const secret = "SUPER SECRET";
 const john = "john";
 const peter = "peter";
 
-export default { john, peter };
+// export default { john, peter };
+module.exports = { john, peter };
