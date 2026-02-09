@@ -3,6 +3,10 @@ import React from "react"
 export default function App() {
   
   const [gameRunning, setGameRunning] = React.useState(false)
+
+  function flipGameRunning() {
+    setGameRunning(prev => !prev)
+  }
   
 /* Challenge
   
@@ -27,7 +31,7 @@ export default function App() {
 */
     return (
         <div>       
-
+          <button className="video-game-button" onClick={flipGameRunning}>{gameRunning?'Pause':'Play'}</button>
         </div>
   )
 }
