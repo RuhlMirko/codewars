@@ -13,16 +13,24 @@ app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
 });
 
+/*----- Importa todas las veces que se hace una get request
+    import jobs from "./jobs.json" with { type: "json" };
+    app.get("/get-jobs", (req, res) => {
+    return res.json(jobs);
+ });
+*/
+import jobs from "./jobs.json" with { type: "json" };
 app.get("/get-jobs", (req, res) => {
-  return res.json({
-    jobs: [
-      { id: 1, title: "FrontEnd Developer" },
-      { id: 1, title: "FullStack Developer" },
-      { id: 1, title: "Backend Developer" },
-    ],
-    statusCode: 200,
-  });
+  return res.json(jobs);
 });
+
+//----- Importa solo cuando se llama a ruta unicamente
+// app.get("/get-jobs", async (req, res) => {
+//   const { default: jobs } = await import("./jobs.json", {
+//     with: { type: "json" },
+//   });
+//   return res.json(jobs);
+// });
 
 app.get("/get-job/:id", (req, res) => {
   const { id } = req.params;
@@ -41,6 +49,15 @@ app.get("/job{s}", (_, res) => {
 // agentCHATGPTchat - agentAchat - agentLOREMIPSUMDOLORELOREMIPSUMDOLOREchat
 app.get("/agent*chat", (_, res) => {
   return res.send("This is a chatbot");
+});
+
+// Rutas más largas que no sabes como terminan
+app.get("/file/*filename", (req, res) => {
+  return res.send("file/*");
+});
+// Usar Regex
+app.get(/.*fly$/, (req, res) => {
+  return res.send("Terminando en fly");
 });
 
 app.get("/health", (req, res) => {
