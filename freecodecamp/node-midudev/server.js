@@ -6,6 +6,11 @@ import { createServer } from "node:http";
 process.loadEnvFile();
 const port = process.env.PORT ?? 3000;
 
+const users = [
+  { id: 1, name: "midudev" },
+  { id: 2, name: "mouredev" },
+];
+
 function sendJson(res, statusCode, data) {
   res.statusCode = statusCode;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -13,16 +18,31 @@ function sendJson(res, statusCode, data) {
 }
 
 const server = createServer((req, res) => {
-  res.setHeader("Content-Type", "text/plain; charset=utf-8");
-  res.statusCode = 200;
-  if (req.url === "/") {
-    return res.end(`Hola mundo, estas en la root`);
-  } else if (req.url === "/users") {
-    sendJson(res, 200, [
-      { id: 1, name: "midudev" },
-      { id: 2, name: "mouredev" },
-    ]);
+  const { method, url } = req;
+
+  if (method === "GET") {
+    if (req.url === "/") {
+      res.setHeader("Content-Type", "text/plain; charset=utf-8");
+      res.statusCode = 200;
+      return res.end(`Hola mundo, estas en la root`);
+    }
+    if (req.url === "/users") {
+      sendJson(res, 200, users);
+    }
+    if (req.url === "/health") {
+      sendJson(res, 200, { status: "ok", uptime: process.uptime() });
+    }
   }
+
+  if (method === "POST") {
+    if (url === "/users") {
+      res.end("Crear nuevo usuario");
+    }
+  }
+
+  //   if (method !== "GET") {
+  //     return sendJson(res, 405, { error: "Method not allowed" });
+  //   }
 
   sendJson(res, 404, { error: "Not Found" });
 });
