@@ -1,6 +1,11 @@
 export default function SearchFormSection(){
     return(
     <>
+        <section className="jobs-search">
+            <h1>Encuentra tu próximo trabajo</h1>        
+            <p>Explora miles de oportunidades en el sector tecnológico.</p>
+        </section>
+        
         <form id="empleos-search-form" role="search">
           <div className="search-bar">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

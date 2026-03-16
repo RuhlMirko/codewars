@@ -1,6 +1,6 @@
 
 export default function Header(){
-    return(
+    return(<>
     <header>
         <h1>
         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -13,8 +13,11 @@ export default function Header(){
         <nav>
         <a href="">Empleos</a>
         </nav>
-    </header>
 
+        
+    </header>
+    
+    </>
     )
 }
 

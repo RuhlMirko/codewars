@@ -1,15 +1,24 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
-import JobSearch from './components/JobSearch'
+import SearchFormSection from './components/SearchFormSection'
+import JobListings from './components/JobListings'
+import Pagination from './components/Pagination'
 
 function App() {
 
   return (
   <>
     <Header/>
+    
     <main>
-      <JobSearch/>
+      <SearchFormSection />
+
+      <section>
+        <JobListings/>
+        <Pagination />
+      </section>
     </main>
+
     <Footer/>
   </>
   )
