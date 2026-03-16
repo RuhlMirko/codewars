@@ -1,7 +1,0 @@
-{
-    "type": "module",
-    "name": "curso-midudev-node",
-    "dependencies": {
-        "ms": "2.1.3"
-    }
-}

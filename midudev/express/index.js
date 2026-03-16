@@ -21,7 +21,23 @@ app.get("/", (req, res) => {
 */
 import jobs from "./jobs.json" with { type: "json" };
 app.get("/get-jobs", (req, res) => {
-  return res.json(jobs);
+  const { text, title, level, limit, technology, offset } = req.query;
+  let filteredJobs = jobs;
+  if (text) {
+    const searchTerm = text.toLowerCase();
+    filteredJobs = filteredJobs.filter(
+      (job) =>
+        job.titulo.toLowerCase().includes(searchTerm) ||
+        job.descripcion.toLowerCase().includes(searchTerm),
+    );
+  }
+  if (technology) {
+    filteredJobs = filteredJobs.filter(
+      (job = job.tecnologias.includes(technology)),
+    );
+  }
+
+  return res.json(filteredJobs);
 });
 
 //----- Importa solo cuando se llama a ruta unicamente
