@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import JobCard  from './components/JobCard'
 
 
 function App() {
@@ -90,6 +91,14 @@ function App() {
       <h2>Resultados de búsqueda</h2>
 
       <div className="jobs-listings">
+        
+          <JobCard
+            titulo="Desarrollador/a Frontend React.js"
+            empresa="Tech Solutions"
+            ubicacion="Remoto"
+            descripcion="Únete a nuestro equipo como desarrollador/a frontend especializado en React.js. Trabaja en proyectos innovadores y colabora con un equipo dinámico."
+          />
+        
       </div>
 
       <nav className="pagination">
