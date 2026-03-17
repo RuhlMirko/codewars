@@ -2,8 +2,6 @@ import React  from "react"
 export default function JobCard({ titulo, empresa, ubicacion, descripcion }) {
       const [isApplied, setIsApplied] = React.useState(false)
 
-      console.log('---> render')
-
       function handleClick() {
         setIsApplied(!isApplied)
       }

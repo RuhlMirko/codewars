@@ -1,12 +1,23 @@
+import {useState} from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import SearchFormSection from './components/SearchFormSection'
 import JobListings from './components/JobListings'
 import Pagination from './components/Pagination'
 
-function App() {
-  const handlePageChange=(page)=>{console.log('Cambiando la pagina a ' + page) }
+import jobsData from './data.json'
+const RESULT_PER_PAGE = 5
 
+function App() {
+  const [currPage, setCurrPage] = useState(1)
+  const totalPages = Math.ceil(jobsData.length/RESULT_PER_PAGE)
+  const pageResults = jobsData.slice(
+    (currPage-1)* RESULT_PER_PAGE, currPage * RESULT_PER_PAGE
+  )
+
+  const handlePageChange=(page)=>{
+    setCurrPage(page)
+  }  
 
   return (
   <>
@@ -16,8 +27,8 @@ function App() {
       <SearchFormSection />
 
       <section>
-        <JobListings/>
-        <Pagination currPage={4} totalPages={5} onPageChange={handlePageChange}/>
+        <JobListings jobs={pageResults}/>
+        <Pagination currPage={currPage} totalPages={totalPages} onPageChange={handlePageChange}/>
       </section>
     </main>
 
