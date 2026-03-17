@@ -6,7 +6,7 @@ import JobListings from './components/JobListings'
 import Pagination from './components/Pagination'
 
 import jobsData from './data.json'
-const RESULT_PER_PAGE = 5
+const RESULT_PER_PAGE = 4
 
 function App() {
   const [currPage, setCurrPage] = useState(1)

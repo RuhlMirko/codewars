@@ -2,12 +2,12 @@ import React  from "react"
 export default function JobCard({ titulo, empresa, ubicacion, descripcion }) {
       const [isApplied, setIsApplied] = React.useState(false)
 
-      function handleClick() {
+      function handleApplyClick() {
         setIsApplied(!isApplied)
       }
 
       const text = isApplied ? 'Aplicado' : 'Aplicar'
-      const buttonClass = isApplied ? 'is-applied' : ''
+      const buttonClass = isApplied ? 'button-apply-job is-applied' : 'button-apply-job'
       const isAppliedText = isApplied ? 'Sí' : 'No'
 
       return (
@@ -20,8 +20,8 @@ export default function JobCard({ titulo, empresa, ubicacion, descripcion }) {
             <p>{descripcion}</p>
           </div>
           <button
-            className={`button-apply-job`}
-            onClick={handleClick}
+            className={buttonClass}
+            onClick={handleApplyClick}
           >
             {text}
           </button>
