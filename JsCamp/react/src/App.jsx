@@ -5,6 +5,8 @@ import JobListings from './components/JobListings'
 import Pagination from './components/Pagination'
 
 function App() {
+  const handlePageChange=(page)=>{console.log('Cambiando la pagina a ' + page) }
+
 
   return (
   <>
@@ -15,7 +17,7 @@ function App() {
 
       <section>
         <JobListings/>
-        <Pagination />
+        <Pagination currPage={4} totalPages={5} onPageChange={handlePageChange}/>
       </section>
     </main>
 
