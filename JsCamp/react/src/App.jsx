@@ -10,8 +10,10 @@ const RESULT_PER_PAGE = 4
 
 function App() {
   const [currPage, setCurrPage] = useState(1)
-  const totalPages = Math.ceil(jobsData.length/RESULT_PER_PAGE)
-  const pageResults = jobsData.slice(
+  const [textToFilter, setTextToFilter] = useState('')
+  const jobsWithTextFilter = textToFilter === ''?jobsData:jobsData.filter(job=>job.titulo.toLowerCase().includes(textToFilter.toLowerCase()))
+  const totalPages = Math.ceil(jobsWithTextFilter.length/RESULT_PER_PAGE)
+  const pageResults = jobsWithTextFilter.slice(
     (currPage-1)* RESULT_PER_PAGE, currPage * RESULT_PER_PAGE
   )
 
@@ -19,12 +21,22 @@ function App() {
     setCurrPage(page)
   }  
 
+  
+  const handleSearch= () =>{
+
+  }
+
+  const handleTextFilter = (newTextToFilter)=>{
+    setTextToFilter(newTextToFilter)
+    setCurrPage(1)
+  }
+
   return (
   <>
     <Header/>
     
     <main>
-      <SearchFormSection />
+      <SearchFormSection onSearch={handleSearch} onTextFilter={handleTextFilter}/>
 
       <section>
         <JobListings jobs={pageResults}/>
