@@ -46,7 +46,7 @@ piArr.forEach(digit=>{
     console.log(digit.toFixed(2))
 })
 
-
+// #### Sin type alias
 let hero = {
     name:'Thor',
     age:1500,    
@@ -55,3 +55,18 @@ let hero = {
 const createHero = (name: string, age:number)=> ({name, age})
 const thor = createHero('Thor', 1500) 
 // variable thor !== a variable hero
+
+// ##### Type alias
+type Hero = {
+    name: string,
+    age:number
+}
+let hero2: Hero={
+    name:'Thor',
+    age:1500
+}
+const createHero2 = (hero: Hero): Hero => {
+ const {name, age} = hero
+ return {name, age}
+}
+const hulk = createHero2({name:'Hulk', age:40}) 
