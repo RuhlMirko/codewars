@@ -126,3 +126,27 @@ const createHero4 = (hero: HeroBasicInfo): Hero => {
  return {id: crypto.randomUUID(),name, age}
 }
 const hulk4 = createHero4({name:'Hulk', age:40}) 
+
+// Type indexing
+type EmployeeData = {
+    isActive: boolean,
+    address: {
+        planet: string,
+        city: string
+    }
+}
+const address: EmployeeData['address'] = {
+    city: 'Madrid', planet:'Earth'
+}
+// inherit type from value
+const localAddress = {
+    city:'Tigre',
+    province:'Buenos Aires'
+}
+type Address = typeof localAddress
+const dadAddress: Address = {
+    city:'Escobar',
+    province:'Buenos Aires'
+}
+const createAddress = () =>({planet:'Tierra', city:'Barcelona'})
+type Address2 = ReturnType<typeof createAddress>
