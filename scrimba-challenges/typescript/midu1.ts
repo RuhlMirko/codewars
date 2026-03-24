@@ -103,3 +103,26 @@ let hero3: Hero3={
 }
 
 // Extension de tipos
+type HeroId4 = `${string}-${string}-${string}-${string}-${string}` // Declares format expected of id in Hero
+type HeroPwScale4 = 'local'|'planetary'|'galactic'|'universal'|'multiversal'
+type HeroBasicInfo = {
+    name:string,
+    age:number
+}
+type HeroProperty = {
+    readonly id?: HeroId,
+    isActive?: boolean // optional value
+    powerScale?: HeroPwScale    
+}
+type Hero4 = HeroBasicInfo & HeroProperty // Combina dos types
+let hero4: Hero4={
+    name:'Thor',
+    age:1500,
+    isActive: true,
+    powerScale:'planetary' //powerScale:'Muy fuerte'
+}
+const createHero4 = (hero: HeroBasicInfo): Hero => {
+ const {name, age} = hero
+ return {id: crypto.randomUUID(),name, age}
+}
+const hulk4 = createHero4({name:'Hulk', age:40}) 
