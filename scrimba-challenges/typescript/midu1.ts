@@ -18,7 +18,7 @@ const sayHiFromFunction = (fn: (name: string) => void) => {
     fn('Miguel')
 }
 const sayHi = (name: string) => {
-    console.log('Hola ${name}')
+    console.log(`Hola ${name}`)
 }
 sayHiFromFunction (sayHi)
 
@@ -34,3 +34,24 @@ function logMessage(message: string): void{
     throw new Error(message)
     // return existe preo no es de interes -> nunca devuelve nada importante
 }
+
+// inferencia funciones anonimas segun el contexto
+// Siempre va sugerir metodos correctos para los elementos sin tipar el array
+const avenger = ['Spidey','Hulk','Iron Man']
+const piArr = [3.124,3.1,3.123456,3.12]
+avenger.forEach(avenger=>{
+    console.log(avenger.toLowerCase())
+})
+piArr.forEach(digit=>{
+    console.log(digit.toFixed(2))
+})
+
+
+let hero = {
+    name:'Thor',
+    age:1500,    
+}
+// hero.power = 200
+const createHero = (name: string, age:number)=> ({name, age})
+const thor = createHero('Thor', 1500) 
+// variable thor !== a variable hero
