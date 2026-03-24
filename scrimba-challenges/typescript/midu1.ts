@@ -150,3 +150,35 @@ const dadAddress: Address = {
 }
 const createAddress = () =>({planet:'Tierra', city:'Barcelona'})
 type Address2 = ReturnType<typeof createAddress>
+
+
+// Arrays
+// const langs: Array<string> = []
+// const langs: string[] = []  
+const langs: (string|number)[] = [] // If you want an array with number AND strings
+langs.push('Java')
+langs.push('JavaScript')
+
+/*
+[
+  ['X','O','X'],
+  ['O','X','O'],
+  ['x','','O'],
+]
+*/
+type CellValue = 'X'|'O'|''
+type GameBoard = [
+    [CellValue, CellValue, CellValue],
+    [CellValue, CellValue, CellValue],
+    [CellValue, CellValue, CellValue]
+]
+// const gameBoard: Array<string[]> = []
+const gameBoard: GameBoard = [
+    ['X','O',''],
+    ['X','O',''],
+    ['X','O','']
+]
+console.log(gameBoard)
+type RGBValues = [number, number, number]
+// const rgb: RGBValues = [200,13,0,'ff']
+const rgb: RGBValues = [200, 13, 0]
