@@ -57,16 +57,26 @@ const thor = createHero('Thor', 1500)
 // variable thor !== a variable hero
 
 // ##### Type alias
+type HeroId = `${string}-${string}-${string}-${string}-${string}` // Declares format expected of id in Hero
 type Hero = {
+    readonly id?: HeroId,
     name: string,
-    age:number
+    age:number,
+    isActive?: boolean // optional value
 }
 let hero2: Hero={
     name:'Thor',
-    age:1500
+    age:1500,
+    isActive: true
 }
 const createHero2 = (hero: Hero): Hero => {
  const {name, age} = hero
- return {name, age}
+ return {id: crypto.randomUUID(),name, age}
+//  return {id: '2344',name, age}
 }
 const hulk = createHero2({name:'Hulk', age:40}) 
+// hulk.id = 400 #### Cannot assign to id cause its readonly
+// template union types
+type HexColor = `#${string}`
+const color: HexColor = '#0033ff' // const color:HexColor = '0033ff'
+
