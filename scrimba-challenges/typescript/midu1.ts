@@ -80,3 +80,26 @@ const hulk = createHero2({name:'Hulk', age:40})
 type HexColor = `#${string}`
 const color: HexColor = '#0033ff' // const color:HexColor = '0033ff'
 
+
+/// Union types
+type HeroId3 = `${string}-${string}-${string}-${string}-${string}` // Declares format expected of id in Hero
+type HeroPwScale = 'local'|'planetary'|'galactic'|'universal'|'multiversal'
+let ann : number | string
+ann = 4 
+ann = 'Name'
+
+type Hero3 = {
+    readonly id?: HeroId,
+    name: string,
+    age:number,
+    isActive?: boolean // optional value
+    powerScale?: HeroPwScale    
+}
+let hero3: Hero3={
+    name:'Thor',
+    age:1500,
+    isActive: true,
+    powerScale:'planetary' //powerScale:'Muy fuerte'
+}
+
+// Extension de tipos
