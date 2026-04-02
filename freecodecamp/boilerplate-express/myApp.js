@@ -22,6 +22,10 @@ app.get(
   },
 );
 
+// JSON responses
+app.get("/:word/echo", function (req, res) {
+  res.json({ echo: req.params.word });
+});
 app.get("/json", function (req, res) {
   const jsonResponse = {
     message:
