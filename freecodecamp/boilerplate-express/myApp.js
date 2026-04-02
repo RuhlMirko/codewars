@@ -11,6 +11,16 @@ app.use((req, res, next) => {
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
+app.get(
+  "/now",
+  (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  },
+  function (req, res) {
+    res.send({ time: req.time });
+  },
+);
 
 app.get("/json", function (req, res) {
   const jsonResponse = {
