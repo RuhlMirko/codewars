@@ -8,6 +8,10 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
+app.get("/json", function (req, res) {
+  res.json({ message: "Hello json" });
+});
+
 const publicDir = __dirname + "/public";
 
 app.use("/public", express.static(publicDir));
