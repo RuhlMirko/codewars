@@ -26,6 +26,17 @@ npm init
 }
 ```
 
+Top export a function or variable
+
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
+```
+
+In index.js:
+
 ```javascript
 const fs = require("fs");
 ```
