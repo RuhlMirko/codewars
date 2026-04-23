@@ -1,0 +1,12 @@
+// React Fun Facts
+
+const reactFacts = [
+    "React was created by Facebook in 2011 and open-sourced in 2013.",
+    "The React logo is a JavaScript representation of an atom.",
+    "React uses a virtual DOM to optimize performance and updates.",
+    "Hooks were introduced in React 16.8 to use state in functional components.",
+    "React's one-way data binding makes debugging easier.",
+    "JSX lets you write HTML-like code in JavaScript.",
+    "React Native allows building mobile apps with React.",
+    "The key prop helps React identify which items have changed in lists."
+];
