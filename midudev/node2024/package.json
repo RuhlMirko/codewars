@@ -9,6 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuhlMirko/codewars.git"
+  },
+  "keywords": ["learning","backend","nodejs"],
   "dependencies": {
     "picocolors": "1.1.1"
   }

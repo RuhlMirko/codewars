@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirko Ruhl — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Junior full-stack developer portfolio: React, Astro, TypeScript, Node.js, Express.js."
+    />
+    <style>
+      :root {
+        --bg: #0b0f19;
+        --panel: #11182a;
+        --text: #e7edf7;
+        --muted: #a7b2c7;
+        --line: #22304a;
+        --accent: #6ea8fe;
+        --accent-2: #78f3d3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        background:
+          radial-gradient(
+            1200px 600px at 20% -10%,
+            #1b2a55 0%,
+            transparent 60%
+          ),
+          radial-gradient(1000px 600px at 90% 0%, #123a34 0%, transparent 55%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: min(1000px, 92vw);
+        margin: 0 auto;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+        background: color-mix(in srgb, var(--bg) 75%, transparent);
+        border-bottom: 1px solid var(--line);
+        z-index: 10;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 16px;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 14px;
+        padding: 0;
+        margin: 0;
+      }
+      .nav a {
+        color: var(--muted);
+      }
+      .nav a:hover {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      main {
+        padding: 34px 0 60px;
+      }
+      section {
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero {
+        padding-top: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.6fr;
+        gap: 22px;
+        align-items: start;
+      }
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.15;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 16px;
+        margin: 0 0 16px;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 0;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--panel) 80%, transparent);
+        color: var(--text);
+        font-weight: 600;
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        border: none;
+        color: #071018;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--panel) 70%, transparent);
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .card {
+        background: color-mix(in srgb, var(--panel) 86%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .stack span {
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .section-title {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+      .muted {
+        color: var(--muted);
+        margin: 0;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .project-title {
+        margin: 0;
+        font-size: 16px;
+      }
+      .project-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .project-links a {
+        color: var(--muted);
+        text-decoration: underline;
+      }
+
+      footer {
+        padding: 26px 0 40px;
+        color: var(--muted);
+      }
+      .small {
+        font-size: 13px;
+      }
+
+      @media (max-width: 820px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .nav ul {
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header>
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="#top">Mirko Ruhl</a>
+          <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <!-- HERO -->
+      <section class="hero" aria-label="Intro">
+        <div class="hero-grid">
+          <div>
+            <h1>Junior Full-Stack Developer</h1>
+            <p class="subtitle">
+              I build end-to-end web apps with <strong>React</strong>,
+              <strong>TypeScript</strong>, and <strong>Node/Express</strong>. I
+              care about clean UX, reliable APIs, and readable code.
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="/resume.pdf">Download Resume</a>
+              <a class="btn" href="#contact">Contact</a>
+            </div>
+
+            <div class="pill-row" aria-label="Tech highlights">
+              <span class="pill">React</span>
+              <span class="pill">Astro</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">Express.js</span>
+            </div>
+          </div>
+
+          <!-- Proof card -->
+          <aside class="card" aria-label="Quick proof">
+            <h2 class="section-title">Proof in 10 seconds</h2>
+            <p class="muted">
+              Shipping production-style projects with clear READMEs, live demos,
+              and thoughtful tradeoffs.
+            </p>
+            <div class="stack" aria-label="Highlights">
+              <span>Auth</span>
+              <span>REST APIs</span>
+              <span>Validation</span>
+              <span>Error handling</span>
+              <span>Deployment</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS -->
+      <section id="projects" aria-label="Featured projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="muted">
+          3 strong case studies beat 12 small demos. Each project should have:
+          live link, repo, and write-up.
+        </p>
+
+        <div class="grid-3" style="margin-top: 14px">
+          <article class="card">
+            <h3 class="project-title">Team Notes + Roles</h3>
+            <p class="muted">
+              Full-stack app with auth, RBAC, and audit logging.
+            </p>
+            <div class="stack">
+              <span>React</span><span>TS</span><span>Express</span
+              ><span>JWT</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live</a>
+              <a href="#">GitHub</a>
+              <a href="#">Case Study</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="project-title">E-commerce API + Storefront</h3>
+            <p class="muted">
+              Products, cart, checkout flow (Stripe test/sandbox).
+            </p>
+            <div class="stack">
+              <span>React</span><span>TS</span><span>Node</span
+              ><span>REST</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live</a>
+              <a href="#">GitHub</a>
+              <a href="#">Case Study</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="project-title">Astro Site + Contact Backend</h3>
+            <p class="muted">
+              SEO/perf-focused site with a backend contact/newsletter service.
+            </p>
+            <div class="stack">
+              <span>Astro</span><span>TS</span><span>Express</span
+              ><span>Accessibility</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live</a>
+              <a href="#">GitHub</a>
+              <a href="#">Case Study</a>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top: 14px">
+          <a class="btn" href="/projects.html">See all projects</a>
+        </p>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" aria-label="Skills">
+        <h2 class="section-title">Skills (verifiable)</h2>
+        <p class="muted">
+          List skills, then link them to projects where they’re used.
+        </p>
+
+        <div class="grid-2" style="margin-top: 14px">
+          <div class="card">
+            <h3 class="project-title">Frontend</h3>
+            <p class="muted">
+              React, Astro, TypeScript, responsive UI, accessibility basics.
+            </p>
+            <div class="stack">
+              <span>React</span><span>Astro</span><span>TypeScript</span
+              ><span>HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="project-title">Backend</h3>
+            <p class="muted">
+              Node.js, Express.js, REST APIs, auth, validation, error handling.
+            </p>
+            <div class="stack">
+              <span>Node.js</span><span>Express</span><span>REST</span
+              ><span>Auth</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" aria-label="About">
+        <h2 class="section-title">About</h2>
+        <p class="muted">
+          I’m a junior full-stack developer who learns by shipping. I enjoy
+          building complete features from UI to API and writing documentation
+          that makes projects easy to review and run.
+        </p>
+        <p class="small muted" style="margin-top: 10px">
+          Currently learning: testing (unit + E2E), basic system design, and
+          security fundamentals.
+        </p>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" aria-label="Contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="card">
+          <p class="muted" style="margin-bottom: 10px">
+            Open to: <strong>Junior Full-Stack</strong> roles and internships
+            (remote or hybrid).
+          </p>
+          <p class="muted">
+            Email: <a href="mailto:mirko.ruhl@email.com">mirko.ruhl@email.com</a
+            ><br />
+            GitHub:
+            <a href="https://github.com/RuhlMirko"
+              >https://github.com/RuhlMirko</a
+            ><br />
+            LinkedIn: <a href="#">https://linkedin.com/in/your-handle</a>
+          </p>
+        </div>
+      </section>
+
+      <footer class="small">
+        © <span id="year"></span> Mirko Ruhl. Built with HTML/CSS (replace with
+        Astro if you want).
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
