@@ -59,6 +59,14 @@ import http from "http";
 npm start
 ```
 
+### Open server on any available port
+
+```javascript
+server.listen(0, () => {
+  console.log(`Server listening on port: ${server.address().port}`);
+});
+```
+
 The entry point is automatically configured in `package.json`, so you don't need to specify where the server is located.
 
 ## Handling URL Parameters in Vanilla Node.js
