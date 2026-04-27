@@ -1,12 +1,12 @@
-import fs from "node:fs";
+import fs from 'node:fs'
 
-fs.readdir(".", (err, files) => {
+fs.readdir('.', (err, files) => {
   if (err) {
-    console.log(err);
-    return;
+    console.log(err)
+    return
   }
-  files.forEach((file) => console.log(file));
-});
+  files.forEach((file) => console.log(file))
+})
 // import fs from "node:promises";
 
 // fs.readdir(".")

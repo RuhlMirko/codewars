@@ -13,8 +13,19 @@
     "type": "git",
     "url": "git+https://github.com/RuhlMirko/codewars.git"
   },
-  "keywords": ["learning","backend","nodejs"],
+  "keywords": [
+    "learning",
+    "backend",
+    "nodejs"
+  ],
   "dependencies": {
     "picocolors": "1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
   }
 }
