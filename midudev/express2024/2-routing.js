@@ -21,8 +21,14 @@ const processRequest = (request, response) => {
     case 'POST':
         switch (url) {
             case '/pokemon':
-                let body = ''
-
+                {
+                    let body = ''
+                    break
+                }
+        default:
+            response.statusCode = 404
+            response.setHeader('Content-Type', 'text/html; charset=utf-8')
+            return response.end('<h1>Page not found</h1>')
     }
     }
 }
