@@ -1,19 +1,30 @@
 const http = require('node:http')
-const dittoJson = require('./ditto.json')
+const dittoJson = require('./pokemon/ditto.json')
 
 const processRequest = (request, response) => {
   const { url, method } = request
 
-  switch (url) {
-    case '/pokemon/ditto':
-      response.setHeader('Content-Type', 'application/json')
-      return response.end(JSON.stringify(dittoJson))      
-    case '/about':
-      return response.end('Welcome to the about page')
-    default:
-      response.statusCode = 404
-      return response.end('Page not found')
-  }
+  switch (method) {
+    case 'GET':
+        switch (url) {    
+            case '/pokemon/ditto':
+            response.setHeader('Content-Type', 'application/json; charset=utf-8')
+            return response.end(JSON.stringify(dittoJson))      
+            case '/about':
+            response.setHeader('Content-Type', 'text/plain; charset=utf-8')
+            return response.end('Welcome to the about page')
+            default:
+            response.statusCode = 404
+            response.setHeader('Content-Type', 'text/html; charset=utf-8')
+            return response.end('<h1>Page not found</h1>')
+        }
+    case 'POST':
+        switch (url) {
+            case '/pokemon':
+                let body = ''
+
+    }
+    }
 }
 
 const server = http.createServer(processRequest)
