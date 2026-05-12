@@ -23,6 +23,15 @@ const processRequest = (request, response) => {
             case '/pokemon':
                 {
                     let body = ''
+                    request.on('data', chunk => {
+                        body += chunk.toString()
+                    })
+                    request.on('end', () => {
+                        console.log('Received data:', body)
+                        response.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' })
+                        const datetime = new Date().toISOString()
+                        response.end(JSON.stringify({ message: 'Pokemon created successfully at: ' + datetime}))
+                    })
                     break
                 }
         default:
