@@ -1,36 +1,46 @@
-const  express = require('express');
-const dittoJson = require('./pokemon/ditto.json')
+const express = require("express");
+const dittoJson = require("./pokemon/ditto.json");
 
 const app = express();
-const PORT = process.env.PORT ?? 5000;
-app.disable('x-powered-by') // Deshabilita la cabecera 'X-Powered-By' para mejorar la seguridad de la aplicación
+const PORT = process.env.PORT ?? 1234
+app.disable("x-powered-by"); // Deshabilita la cabecera 'X-Powered-By' para mejorar la seguridad de la aplicación
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  if (req.method !== "POST") return next();
+  if (req.headers["content-type"] !== "application/json") return next();
 
-app.get('/', (req, res) => {
-    res.status(200).send('<h1>Hello world</h1>')
-})
+  let body = "";
+  // escuchar el evento data
+  req.on("data", (chunk) => {
+    body += chunk.toString();
+  });
 
-app.get('/pokemon/ditto', (req, res) => {
-    res.status(200).json(dittoJson)
-})
+  req.on("end", () => {
+    const data = JSON.parse(body);
+    data.timestamp = Date.now();
+    // mutar la request y meter la información en el req.body
+    req.body = data;
+    next();
+  });
+});
 
-app.post('/pokemon', (req, res) => {
-    let body = ''
-    req.on('data', chunk => {
-        body += chunk.toString()
-    })
-    req.on('end', () => {
-        console.log('Received data:', body)
-        const datetime = new Date().toISOString()
-        res.status(201).json({ message: 'Pokemon created successfully at: ' + datetime})
-    })
+app.get("/", (req, res) => {
+  res.status(200).send("<h1>Hello world</h1>");
+});
 
-})
+app.get("/pokemon/ditto", (req, res) => {
+  res.status(200).json(dittoJson);
+});
+
+app.post("/pokemon", (req, res) => {
+  res.status(201).json(req.body);
+});
 
 app.use((req, res) => {
-    res.status(404).send('<h1>Page not found</h1>')
-})
+  res.status(404).send("<h1>Page not found</h1>");
+});
 
 app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`)
-})
+  console.log(`Server listening on http://localhost:${PORT}`);
+});
