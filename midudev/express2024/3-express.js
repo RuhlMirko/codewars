@@ -1,14 +1,17 @@
 const  express = require('express');
-const app = express();
+const dittoJson = require('./pokemon/ditto.json')
 
+const app = express();
 const PORT = process.env.PORT ?? 5000;
+app.disable('x-powered-by') // Deshabilita la cabecera 'X-Powered-By' para mejorar la seguridad de la aplicación
+
 
 app.get('/', (req, res) => {
     res.status(200).send('<h1>Hello world</h1>')
 })
 
-app.get('/api', (req, res) => {
-    res.status(200).json({ message: 'Hello world' })
+app.get('/pokemon/ditto', (req, res) => {
+    res.status(200).json(dittoJson)
 })
 
 app.post('/pokemon', (req, res) => {
@@ -22,6 +25,10 @@ app.post('/pokemon', (req, res) => {
         res.status(201).json({ message: 'Pokemon created successfully at: ' + datetime})
     })
 
+})
+
+app.use((req, res) => {
+    res.status(404).send('<h1>Page not found</h1>')
 })
 
 app.listen(PORT, () => {
