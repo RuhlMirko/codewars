@@ -5,25 +5,26 @@ const app = express();
 const PORT = process.env.PORT ?? 1234
 app.disable("x-powered-by"); // Deshabilita la cabecera 'X-Powered-By' para mejorar la seguridad de la aplicación
 
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  if (req.method !== "POST") return next();
-  if (req.headers["content-type"] !== "application/json") return next();
+app.use(express.json()); // Middleware para parsear el cuerpo de las solicitudes con formato JSON
+// app.use((req, res, next) => {
+//   console.log(`${req.method} ${req.url}`);
+//   if (req.method !== "POST") return next();
+//   if (req.headers["content-type"] !== "application/json") return next();
 
-  let body = "";
-  // escuchar el evento data
-  req.on("data", (chunk) => {
-    body += chunk.toString();
-  });
+//   let body = "";
+//   // escuchar el evento data
+//   req.on("data", (chunk) => {
+//     body += chunk.toString();
+//   });
 
-  req.on("end", () => {
-    const data = JSON.parse(body);
-    data.timestamp = Date.now();
-    // mutar la request y meter la información en el req.body
-    req.body = data;
-    next();
-  });
-});
+//   req.on("end", () => {
+//     const data = JSON.parse(body);
+//     data.timestamp = Date.now();
+//     // mutar la request y meter la información en el req.body
+//     req.body = data;
+//     next();
+//   });
+// });
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Hello world</h1>");
