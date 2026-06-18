@@ -9,27 +9,22 @@ import Bug9KeyProp from './pages/Bug9KeyProp'
 import Bug10EmailRegex from './pages/Bug10EmailRegex'
 
 const bugs = [
-  { path: '/bug1', label: 'Bug 1/6: Counter Memory Leak', type: 'real' },
-  { path: '/bug2', label: 'Bug 2/7: useEffect Missing Deps', type: 'real' },
-  { path: '/bug3', label: 'Bug 3: User Search Filter', type: 'red-herring' },
-  { path: '/bug4', label: 'Bug 4: User List Sorting', type: 'red-herring' },
-  { path: '/bug5', label: 'Bug 5: Price Calculation', type: 'defensive' },
-  { path: '/bug8', label: 'Bug 8: Stale Closure', type: 'real' },
-  { path: '/bug9', label: 'Bug 9: Key Prop', type: 'red-herring' },
-  { path: '/bug10', label: 'Bug 10: Email Regex', type: 'real' },
+  { path: '/bug1', label: 'Bug 1/6: Counter' },
+  { path: '/bug2', label: 'Bug 2/7: useEffect' },
+  { path: '/bug3', label: 'Bug 3: User Search' },
+  { path: '/bug4', label: 'Bug 4: User Sort' },
+  { path: '/bug5', label: 'Bug 5: Price Calc' },
+  { path: '/bug8', label: 'Bug 8: Data Fetcher' },
+  { path: '/bug9', label: 'Bug 9: Key Prop' },
+  { path: '/bug10', label: 'Bug 10: Email Regex' },
 ]
 
 function Home() {
   return (
     <div>
       <h1>React Bug Practice</h1>
-      <p style={{ marginBottom: '10px' }}>
-        10 intentional bugs to find and fix. Each page shows a <strong>Buggy</strong> and <strong>Fixed</strong> version side-by-side.
-      </p>
-      <p style={{ marginBottom: '20px', fontSize: '14px', color: '#888' }}>
-        <span style={{ display: 'inline-block', width: '12px', height: '12px', backgroundColor: '#e74c3c', borderRadius: '2px', marginRight: '4px', verticalAlign: 'middle' }}></span> Real bug &nbsp;
-        <span style={{ display: 'inline-block', width: '12px', height: '12px', backgroundColor: '#f39c12', borderRadius: '2px', marginRight: '4px', verticalAlign: 'middle' }}></span> Red herring (no bug) &nbsp;
-        <span style={{ display: 'inline-block', width: '12px', height: '12px', backgroundColor: '#f39c12', borderRadius: '2px', marginRight: '4px', verticalAlign: 'middle' }}></span> Defensive coding
+      <p style={{ marginBottom: '20px' }}>
+        8 components with bugs. Find and fix them.
       </p>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {bugs.map(bug => (
@@ -39,8 +34,8 @@ function Home() {
               style={{
                 display: 'block',
                 padding: '12px 16px',
-                backgroundColor: bug.type === 'real' ? '#fdf0ef' : '#fef9e7',
-                border: `2px solid ${bug.type === 'real' ? '#e74c3c' : '#f39c12'}`,
+                backgroundColor: '#fdf0ef',
+                border: '2px solid #e74c3c',
                 borderRadius: '8px',
                 textDecoration: 'none',
                 color: 'inherit',
@@ -48,9 +43,6 @@ function Home() {
               }}
             >
               {bug.label}
-              <span style={{ float: 'right', fontSize: '13px', color: '#888' }}>
-                {bug.type === 'real' ? 'REAL BUG' : bug.type === 'defensive' ? 'DEFENSIVE' : 'RED HERRING'}
-              </span>
             </Link>
           </li>
         ))}

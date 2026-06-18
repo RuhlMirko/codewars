@@ -20,13 +20,12 @@ export default function Bug4UserSort() {
 
   return (
     <div>
-      <h2>Bug 4: User List Sorting (Red Herring)</h2>
+      <h2>Bug 4: User List Sorting</h2>
       <p style={{ marginBottom: '20px' }}>
-        <strong>Verdict:</strong> This is also a <strong>confidence check</strong> - there is no bug here.
-        The sort <code>b.name.localeCompare(a.name)</code> correctly sorts in Z-A (descending) order.
+        This component sorts users alphabetically. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #f39c12', borderRadius: '8px', backgroundColor: '#fef9e7' }}>
-        <h3 style={{ color: '#f39c12', marginTop: 0 }}>Working Sort</h3>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+        <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <button onClick={() => setSortAscending(!sortAscending)} style={{ marginBottom: '10px' }}>
           Sort: {sortAscending ? 'A-Z' : 'Z-A'}
         </button>
@@ -38,9 +37,7 @@ export default function Bug4UserSort() {
             </li>
           ))}
         </ul>
-        <p style={{ color: '#f39c12', fontSize: '14px' }}>
-          Toggle between A-Z and Z-A - the sort works correctly in both directions.
-        </p>
+        <p>Total: {sortedUsers.length} users</p>
       </div>
     </div>
   )

@@ -16,13 +16,12 @@ export default function Bug3UserSearch() {
 
   return (
     <div>
-      <h2>Bug 3: User Search Filter (Red Herring)</h2>
+      <h2>Bug 3: User Search Filter</h2>
       <p style={{ marginBottom: '20px' }}>
-        <strong>Verdict:</strong> This is actually a <strong>confidence check</strong> - there is no bug here.
-        The filter logic <code>user.name.toLowerCase().includes(searchTerm.toLowerCase())</code> works correctly.
+        This component filters users by name. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #f39c12', borderRadius: '8px', backgroundColor: '#fef9e7' }}>
-        <h3 style={{ color: '#f39c12', marginTop: 0 }}>Working Filter</h3>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+        <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <input
           type="text"
           placeholder="Search users..."
@@ -40,9 +39,6 @@ export default function Bug3UserSearch() {
           ))}
         </ul>
         <p>Total: {filteredUsers.length} users</p>
-        <p style={{ color: '#f39c12', fontSize: '14px' }}>
-          Try typing "al" or "bob" - the filter works perfectly. This was a trick to test your confidence!
-        </p>
       </div>
     </div>
   )
