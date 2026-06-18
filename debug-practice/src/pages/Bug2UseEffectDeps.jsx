@@ -14,7 +14,7 @@ function EffectDemo() {
   useEffect(() => {
     document.title = `Users: ${users.length} | Count: ${count}`
     setEffectLog(prev => [...prev, `Effect ran (count=${count})`])
-  })
+  }, [count])
 
   return (
     <div>
@@ -37,7 +37,7 @@ export default function Bug2UseEffectDeps() {
       <p style={{ marginBottom: '20px' }}>
         This component has a useEffect that updates the document title. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <EffectDemo />
       </div>

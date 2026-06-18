@@ -20,14 +20,14 @@ export default function Bug3UserSearch() {
       <p style={{ marginBottom: '20px' }}>
         This component filters users by name. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <input
           type="text"
           placeholder="Search users..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ padding: '8px', width: '250px', marginBottom: '10px', display: 'block' }}
+          style={{ padding: '8px', width: '70%', margin: '10px auto', display: 'block' }}
         />
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {filteredUsers.map(user => (

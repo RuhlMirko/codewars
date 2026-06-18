@@ -24,7 +24,7 @@ export default function Bug4UserSort() {
       <p style={{ marginBottom: '20px' }}>
         This component sorts users alphabetically. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef'}}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <button onClick={() => setSortAscending(!sortAscending)} style={{ marginBottom: '10px' }}>
           Sort: {sortAscending ? 'A-Z' : 'Z-A'}

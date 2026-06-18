@@ -16,7 +16,7 @@ export default function Bug5PriceCalc() {
       <p style={{ marginBottom: '20px' }}>
         This component calculates a shopping cart total. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef'}}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <ul style={{ listStyle: 'none', padding: 0 }}>
           {cartItems.map(item => (

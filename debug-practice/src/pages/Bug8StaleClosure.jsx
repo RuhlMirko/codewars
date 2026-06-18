@@ -65,7 +65,7 @@ export default function Bug8StaleClosure() {
       <p style={{ marginBottom: '20px' }}>
         This component fetches data from an API and allows fetching the next item. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef'}}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <DataFetcher />
       </div>

@@ -11,7 +11,7 @@ function Counter() {
       setIntervalCount(prev => prev + 1)
     }, 1000)
 
-    return intervalId
+    return clearInterval(intervalId)
   }, [count])
 
   return (
@@ -33,7 +33,7 @@ export default function Bug1CounterLeak() {
       <p style={{ marginBottom: '20px' }}>
         This counter has a useEffect with a cleanup. Inspect the code and find the bug.
       </p>
-      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
+      <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
         <Counter />
       </div>
