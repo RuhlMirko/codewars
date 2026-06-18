@@ -7,6 +7,14 @@ import Bug5PriceCalc from './pages/Bug5PriceCalc'
 import Bug8StaleClosure from './pages/Bug8StaleClosure'
 import Bug9KeyProp from './pages/Bug9KeyProp'
 import Bug10EmailRegex from './pages/Bug10EmailRegex'
+import Bug11StateMutation from './pages/Bug11StateMutation'
+import Bug12UseCallback from './pages/Bug12UseCallback'
+import Bug13Cleanup from './pages/Bug13Cleanup'
+import Bug14KeyIndex from './pages/Bug14KeyIndex'
+import Bug15AsyncRace from './pages/Bug15AsyncRace'
+import Bug16Batching from './pages/Bug16Batching'
+import Bug17EventListener from './pages/Bug17EventListener'
+import Bug18AutoFocus from './pages/Bug18AutoFocus'
 
 const bugs = [
   { path: '/bug1', label: 'Bug 1/6: Counter' },
@@ -17,6 +25,14 @@ const bugs = [
   { path: '/bug8', label: 'Bug 8: Data Fetcher' },
   { path: '/bug9', label: 'Bug 9: Key Prop' },
   { path: '/bug10', label: 'Bug 10: Email Regex' },
+  { path: '/bug11', label: 'Bug 11: Todo List' },
+  { path: '/bug12', label: 'Bug 12: Filterable List' },
+  { path: '/bug13', label: 'Bug 13: Timer' },
+  { path: '/bug14', label: 'Bug 14: User List by Role' },
+  { path: '/bug15', label: 'Bug 15: User Profile' },
+  { path: '/bug16', label: 'Bug 16: Counter +3' },
+  { path: '/bug17', label: 'Bug 17: Window Resize' },
+  { path: '/bug18', label: 'Bug 18: Auto-Focus Input' },
 ]
 
 function Home() {
@@ -24,7 +40,7 @@ function Home() {
     <div>
       <h1>React Bug Practice</h1>
       <p style={{ marginBottom: '20px' }}>
-        8 components with bugs. Find and fix them.
+        16 components with bugs. Find and fix them.
       </p>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {bugs.map(bug => (
@@ -74,6 +90,14 @@ export default function App() {
         <Route path="/bug8" element={<Bug8StaleClosure />} />
         <Route path="/bug9" element={<Bug9KeyProp />} />
         <Route path="/bug10" element={<Bug10EmailRegex />} />
+        <Route path="/bug11" element={<Bug11StateMutation />} />
+        <Route path="/bug12" element={<Bug12UseCallback />} />
+        <Route path="/bug13" element={<Bug13Cleanup />} />
+        <Route path="/bug14" element={<Bug14KeyIndex />} />
+        <Route path="/bug15" element={<Bug15AsyncRace />} />
+        <Route path="/bug16" element={<Bug16Batching />} />
+        <Route path="/bug17" element={<Bug17EventListener />} />
+        <Route path="/bug18" element={<Bug18AutoFocus />} />
       </Routes>
     </div>
   )
