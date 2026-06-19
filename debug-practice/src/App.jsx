@@ -17,15 +17,15 @@ import Bug17EventListener from './pages/Bug17EventListener'
 import Bug18AutoFocus from './pages/Bug18AutoFocus'
 
 const bugs = [
-  { path: '/bug1', label: 'Bug 1/6: Counter' },
-  { path: '/bug2', label: 'Bug 2/7: useEffect' },
-  { path: '/bug3', label: 'Bug 3: User Search' },
-  { path: '/bug4', label: 'Bug 4: User Sort' },
-  { path: '/bug5', label: 'Bug 5: Price Calc' },
-  { path: '/bug8', label: 'Bug 8: Data Fetcher' },
-  { path: '/bug9', label: 'Bug 9: Key Prop' },
-  { path: '/bug10', label: 'Bug 10: Email Regex' },
-  { path: '/bug11', label: 'Bug 11: Todo List' },
+  { path: '/bug1', label: 'Bug 1/6: Counter', isCompleted: true },
+  { path: '/bug2', label: 'Bug 2/7: useEffect' , isCompleted: true },
+  { path: '/bug3', label: 'Bug 3: User Search' , isCompleted: true },
+  { path: '/bug4', label: 'Bug 4: User Sort' , isCompleted: true },
+  { path: '/bug5', label: 'Bug 5: Price Calc' , isCompleted: true },
+  { path: '/bug8', label: 'Bug 8: Data Fetcher' , isCompleted: true },
+  { path: '/bug9', label: 'Bug 9: Key Prop' , isCompleted: true },
+  { path: '/bug10', label: 'Bug 10: Email Regex' , isCompleted: true },
+  { path: '/bug11', label: 'Bug 11: Todo List' , isCompleted: false },
   { path: '/bug12', label: 'Bug 12: Filterable List' },
   { path: '/bug13', label: 'Bug 13: Timer' },
   { path: '/bug14', label: 'Bug 14: User List by Role' },
@@ -50,11 +50,11 @@ function Home() {
               style={{
                 display: 'block',
                 padding: '12px 16px',
-                backgroundColor: '#fdf0ef',
-                border: '2px solid #e74c3c',
+                backgroundColor: bug.isCompleted ? 'green':'red',
+                border: `2px solid ${bug.isCompleted ? '#6eb645': '#d65858'}` ,
                 borderRadius: '8px',
                 textDecoration: 'none',
-                color: 'inherit',
+                color: 'white',
                 transition: 'transform 0.1s',
               }}
             >
