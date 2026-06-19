@@ -25,7 +25,7 @@ const bugs = [
   { path: '/bug8', label: 'Bug 8: Data Fetcher' , isCompleted: true },
   { path: '/bug9', label: 'Bug 9: Key Prop' , isCompleted: true },
   { path: '/bug10', label: 'Bug 10: Email Regex' , isCompleted: true },
-  { path: '/bug11', label: 'Bug 11: Todo List' , isCompleted: false },
+  { path: '/bug11', label: 'Bug 11: Todo List' , isCompleted: true },
   { path: '/bug12', label: 'Bug 12: Filterable List' },
   { path: '/bug13', label: 'Bug 13: Timer' },
   { path: '/bug14', label: 'Bug 14: User List by Role' },

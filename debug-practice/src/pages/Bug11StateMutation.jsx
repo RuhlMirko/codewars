@@ -7,15 +7,16 @@ function TodoApp() {
   ])
 
   const addTodo = () => {
-    const newTodo = { id: Date.now(), text: 'New task', done: false }
-    todos.push(newTodo)
-    setTodos(todos)
+    const newTodo = { id: Date.now(), text: 'New task', done: false }    
+    setTodos(prev => [...prev, newTodo])
   }
 
   const toggleTodo = (id) => {
-    const todo = todos.find(t => t.id === id)
-    todo.done = !todo.done
-    setTodos(todos)
+    setTodos(prev =>
+      prev.map(todo =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
+    )
   }
 
   return (
