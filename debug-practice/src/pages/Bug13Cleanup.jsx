@@ -4,13 +4,15 @@ function Timer() {
   const [seconds, setSeconds] = useState(0)
   const [running, setRunning] = useState(false)
 
-  useEffect(() => {
-    if (running) {
-      const id = setInterval(() => {
-        setSeconds(s => s + 1)
-      }, 1000)
-    }
-  }, [running])
+useEffect(() => {
+  if (!running) return
+
+  const id = setInterval(() => {
+    setSeconds(s => s + 1)
+  }, 1000)
+
+  return () => clearInterval(id)
+}, [running])
 
   return (
     <div>

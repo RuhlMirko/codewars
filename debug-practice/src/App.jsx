@@ -27,7 +27,7 @@ const bugs = [
   { path: '/bug10', label: 'Bug 10: Email Regex' , isCompleted: true },
   { path: '/bug11', label: 'Bug 11: Todo List' , isCompleted: true },
   { path: '/bug12', label: 'Bug 12: Filterable List' },
-  { path: '/bug13', label: 'Bug 13: Timer' },
+  { path: '/bug13', label: 'Bug 13: Timer' , isCompleted: true },
   { path: '/bug14', label: 'Bug 14: User List by Role' },
   { path: '/bug15', label: 'Bug 15: User Profile' },
   { path: '/bug16', label: 'Bug 16: Counter +3' },
