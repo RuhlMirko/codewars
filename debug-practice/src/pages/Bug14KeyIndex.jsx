@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 
 const users = [
   { id: 1, name: 'Alice', role: 'admin' },
@@ -13,8 +13,9 @@ function UserList({ roleFilter }) {
 
   const filteredUsers = users.filter(u => u.role === roleFilter)
 
-  const handleClick = (index) => {
-    setClickLog(prev => [...prev, `Clicked: ${filteredUsers[index].name}`])
+  const handleClick = (user) => {
+    console.log(user)
+    setClickLog(prev => [...prev, `Clicked: ${user.name}`])    
   }
 
   return (
@@ -22,8 +23,8 @@ function UserList({ roleFilter }) {
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {filteredUsers.map((user, index) => (
           <li
-            key={index}
-            onClick={() => handleClick(index)}
+            key={user.id}
+            onClick={() => handleClick(user)}
             style={{ padding: '10px', margin: '5px 0', backgroundColor: '#f5f5f5', borderRadius: '4px', cursor: 'pointer' }}
           >
             {user.name} ({user.role})
@@ -32,7 +33,7 @@ function UserList({ roleFilter }) {
       </ul>
       <p>Click log:</p>
       <div style={{ fontSize: '12px', backgroundColor: '#f5f5f5', padding: '8px', borderRadius: '4px', maxHeight: '100px', overflow: 'auto' }}>
-        {clickLog.map((entry, i) => <div key={i}>{entry}</div>)}
+        {clickLog.map((entry, i) => <p key={i}>{entry}</p>)}
       </div>
     </div>
   )
