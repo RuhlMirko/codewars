@@ -69,6 +69,7 @@ export default function Bug19DebounceSearch() {
       <p style={{ marginBottom: '20px' }}>
         This search component should debounce API calls so it doesn't fire on every keystroke.
         Inspect the code and find the bug.
+        When fixed, rapid typing should only trigger one API call after 500ms of inactivity.
       </p>
       <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>

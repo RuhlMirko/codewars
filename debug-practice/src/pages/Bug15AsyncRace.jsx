@@ -33,6 +33,7 @@ export default function Bug15AsyncRace() {
       <h2>Bug 15: User Profile</h2>
       <p style={{ marginBottom: '20px' }}>
         This component fetches a user profile. Inspect the code and find the bug.
+        When fixed, switching between users should always display the correct user, even when clicking buttons quickly.
       </p>
       <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>

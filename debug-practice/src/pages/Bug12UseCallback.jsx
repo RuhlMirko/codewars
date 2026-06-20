@@ -58,6 +58,7 @@ export default function Bug12UseCallback() {
       <h2>Bug 12: Filterable List</h2>
       <p style={{ marginBottom: '20px' }}>
         This component has a filterable list with an unrelated counter. Inspect the code and find the bug.
+        When fixed, clicking "Increment" should not re-render the list.
       </p>
       <div style={{ padding: '20px', border: '2px solid #e74c3c', borderRadius: '8px', backgroundColor: '#fdf0ef', maxWidth: '500px' }}>
         <h3 style={{ color: '#e74c3c', marginTop: 0 }}>Component</h3>
