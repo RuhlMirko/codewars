@@ -15,6 +15,8 @@ import Bug15AsyncRace from './pages/Bug15AsyncRace'
 import Bug16Batching from './pages/Bug16Batching'
 import Bug17EventListener from './pages/Bug17EventListener'
 import Bug18AutoFocus from './pages/Bug18AutoFocus'
+import Bug19DebounceSearch from './pages/Bug19DebounceSearch'
+import Bug20AbortController from './pages/Bug20AbortController'
 
 const bugs = [
   { path: '/bug1', label: 'Bug 1/6: Counter', isCompleted: true },
@@ -28,11 +30,13 @@ const bugs = [
   { path: '/bug11', label: 'Bug 11: Todo List' , isCompleted: true },
   { path: '/bug12', label: 'Bug 12: Filterable List' },
   { path: '/bug13', label: 'Bug 13: Timer' , isCompleted: true },
-  { path: '/bug14', label: 'Bug 14: User List by Role' },
+  { path: '/bug14', label: 'Bug 14: User List by Role', isCompleted: true },
   { path: '/bug15', label: 'Bug 15: User Profile' },
   { path: '/bug16', label: 'Bug 16: Counter +3' },
   { path: '/bug17', label: 'Bug 17: Window Resize' },
   { path: '/bug18', label: 'Bug 18: Auto-Focus Input' },
+  { path: '/bug19', label: 'Bug 19: Search Debounce' },
+  { path: '/bug20', label: 'Bug 20: AbortController' },
 ]
 
 function Home() {
@@ -40,7 +44,7 @@ function Home() {
     <div>
       <h1>React Bug Practice</h1>
       <p style={{ marginBottom: '20px' }}>
-        16 components with bugs. Find and fix them.
+        18 components with bugs. Find and fix them.
       </p>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {bugs.map(bug => (
@@ -98,6 +102,8 @@ export default function App() {
         <Route path="/bug16" element={<Bug16Batching />} />
         <Route path="/bug17" element={<Bug17EventListener />} />
         <Route path="/bug18" element={<Bug18AutoFocus />} />
+        <Route path="/bug19" element={<Bug19DebounceSearch />} />
+        <Route path="/bug20" element={<Bug20AbortController />} />
       </Routes>
     </div>
   )
