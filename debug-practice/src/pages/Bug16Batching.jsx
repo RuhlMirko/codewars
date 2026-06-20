@@ -4,9 +4,7 @@ function Counter() {
   const [count, setCount] = useState(0)
 
   const incrementThree = () => {
-    setCount(count + 1)
-    setCount(count + 1)
-    setCount(count + 1)
+    setCount(prev => prev + 3)
   }
 
   return (
